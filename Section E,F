@@ -231,3 +231,342 @@ Aniah Erica Lucky Moeng
 Bachelor of Business Intelligence and Data Analytics (BAC)
 
 Python Student Gradebook Management System
+
+SECTION F
+
+Student Gradebook Management System - Advanced Features
+Project Overview
+This project is an advanced version of the Student Gradebook Management System developed using Python and Object-Oriented Programming (OOP). The system introduces advanced programming concepts such as custom exception handling, data validation, searching, sorting algorithms, and improved gradebook management.
+
+The application enables users to manage student records efficiently while ensuring data accuracy and handling errors gracefully.
+
+Objectives
+The objectives of this section are to:
+
+-Implement custom exception handling.
+-Validate student grades before storing them.
+-Prevent duplicate student records.
+-Search for students efficiently.
+-Sort student records alphabetically.
+-Sort student records by average grade.
+-Generate organized gradebook reports.
+-Improve program reliability and usability.
+
+FEATURES
+
+Student Management
+The system allows users to:
+
+-Add students to the gradebook.
+-Store grades for multiple subjects.
+-Prevent duplicate student names.
+-Search for students by name.
+-Calculate student averages automatically.
+-Grade Validation
+-The program validates grades before storing them.
+
+RULES
+
+-Grades must be numeric.
+-Grades must be between 0 and 100.
+-Invalid grades generate a custom exception.
+
+Example:
+
+if not 0 <= grade <= 100:
+    raise InvalidGradeError(
+        "Grade must be between 0 and 100."
+    )
+Example Output:
+
+Grade must be between 0 and 100.
+
+Custom Exceptions
+StudentNotFoundError
+Raised when a student cannot be found in the gradebook.
+
+class StudentNotFoundError(Exception):
+    pass
+Example Output:
+
+Student not found.
+InvalidGradeError
+Raised when a user enters an invalid grade.
+
+class InvalidGradeError(Exception):
+    pass
+Example Output:
+
+Grade must be between 0 and 100.
+
+PROGRAM STRUCTURE
+Class: Student
+The Student class represents an individual student.
+
+Attributes
+Attribute	  Description
+name	      Student's name
+grades	    Dictionary storing subject grades
+
+METHODS
+__init__(name)
+Creates a student object and initializes an empty grade dictionary.
+
+Example:
+
+student = Student("Aniah")
+
+add_grade(subject, grade)
+Adds a subject grade after validation.
+
+Example:
+
+student.add_grade("MATHS", 92)
+calculate_average()
+Calculates and returns the student's average grade.
+
+Example:
+
+student.calculate_average()
+Output:
+
+88.33
+
+Class: Gradebook
+The Gradebook class manages all student records.
+
+Attributes
+Attribute	  Description
+students	  List of Student objects
+
+METHODS
+add_student(student)
+Adds a new student to the gradebook.
+
+Prevents duplicate names.
+
+Example Output:
+
+Duplicate student name.
+
+search_student(student_name)
+Searches for a student by name.
+
+Returns:
+
+Student object if found.
+Raises StudentNotFoundError if not found.
+
+Example:
+
+gradebook.search_student("Aniah")
+sort_by_name()
+Sorts students alphabetically using Bubble Sort.
+
+Example Output:
+
+SORTED BY NAME
+Result:
+
+Aniah
+Leornad
+Mandisa
+Mpho
+Phenyo
+Weno
+
+sort_by_average()
+Sorts students according to their calculated average using Bubble Sort.
+
+Example Output:
+
+SORTED BY AVERAGE
+Result:
+
+Leornad
+Mandisa
+Phenyo
+Mpho
+Aniah
+Weno
+
+display_students()
+Displays all students and their averages.
+
+Example Output:
+
+GRADEBOOK REPORT
+--------------------------------------------------
+Aniah - Average: 88.33
+Mpho - Average: 85.67
+Leornad - Average: 75.00
+Phenyo - Average: 81.67
+Weno - Average: 90.00
+Mandisa - Average: 78.67
+
+Subjects Used
+The system currently manages grades for:
+
+Mathematics
+English
+Science
+
+Sample Student Data
+
+Student	Maths	English	Science
+Aniah	92	85	88
+Mpho	88	79	90
+Leornad	75	80	70
+Phenyo	83	77	85
+Weno	90	89	91
+Mandisa	78	82	76
+
+Average Grade CalculationS
+
+Student	Average
+Aniah	88.33
+Mpho	85.67
+Leornad	75.00
+Phenyo	81.67
+Weno	90.00
+Mandisa	78.67
+
+Sorting Functionality
+
+Sort by Name
+Students are arranged alphabetically.
+
+Example:
+
+Aniah
+Leornad
+Mandisa
+Mpho
+Phenyo
+Weno
+
+Sort by Average
+
+Students are arranged from the lowest average to the highest average.
+
+Example:
+
+Leornad - Average: 75.00
+Mandisa - Average: 78.67
+Phenyo - Average: 81.67
+Mpho - Average: 85.67
+Aniah - Average: 88.33
+Weno - Average: 90.00
+
+Search Functionality
+
+The user can search for a student by entering their name.
+Example Input:
+
+Enter student name to search:
+Aniah
+Example Output:
+
+Aniah found with average 88.33
+If the student does not exist:
+
+Student not found.
+
+Exception Handling
+The program uses try-except blocks to handle errors safely.
+
+Invalid Grade Handling
+except InvalidGradeError as error:
+    print(error)
+Output:
+
+Grade must be between 0 and 100.
+Non-Numeric Input Handling
+except ValueError:
+    print("Grades must be numeric.")
+Output:
+
+Grades must be numeric.
+Student Search Error Handling
+except StudentNotFoundError as error:
+    print(error)
+Output:
+
+Student not found.
+
+OOP Concepts Demonstrated
+This project demonstrates the following Object-Oriented Programming principles:
+
+Classes
+-Student
+-Gradebook
+-Objects
+-student = Student("Aniah")
+-gradebook = Gradebook()
+
+Encapsulation
+Student information and operations are kept within their respective classes.
+
+Constructors
+__init__()
+Used to initialize object attributes.
+
+METHODS
+Examples:
+
+add_grade()
+calculate_average()
+add_student()
+search_student()
+sort_by_name()
+sort_by_average()
+display_students()
+
+Exception Handling
+Custom exceptions:
+
+StudentNotFoundError
+InvalidGradeError
+
+How to Run the Program
+-Open a Python IDE such as Visual Studio Code, IDLE, or PyCharm.
+-Save the code as:
+    -advanced_gradebook.py
+    -Run the program.
+
+Enter:
+
+Number of students
+Student names
+Maths grades
+English grades
+Science grades
+
+View:
+
+  -Gradebook reports
+  -Sorted student lists
+  -Search results
+  -Validation error messages
+
+Technologies Used
+-Python 3
+-Object-Oriented Programming (OOP)
+-Custom Exceptions
+-Dictionaries
+-Lists
+-Bubble Sort Algorithm
+-Error Handling
+-Functions and Methods
+
+
+Author:
+Aniah Erica Lucky Moeng
+
+Bachelor of Business Intelligence and Data Analytics (BAC)
+
+Python Student Gradebook Management System
+
+Section F - Advanced Features and Exception Handling
+
+
