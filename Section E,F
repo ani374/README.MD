@@ -1,1 +1,233 @@
+Student Gradebook Management System
+Project Description
+The Student Gradebook Management System is a Python application developed using Object-Oriented Programming (OOP) principles. The program allows users to create student records, assign grades for multiple subjects, calculate average grades, search for students by name, remove students from the gradebook, and display a summary of all students.
 
+The system uses two classes:
+
+-Student
+-Gradebook
+These classes work together to organize and manage student information effectively.
+
+Objectives
+This project was designed to:
+
+Apply Object-Oriented Programming concepts.
+Create and manage Student objects.
+Store grades using dictionaries.
+Calculate academic averages automatically.
+Search for student records.
+Display student information and grade summaries.
+Manage multiple students within a Gradebook.
+
+FEATURES
+
+Student Management
+
+-Add students to the gradebook.
+-Store student names.
+-Store subject grades.
+-Search for students by name.
+-Remove students from the gradebook.
+
+GRADE MANAGEMENT
+*Add grades for:
+  -Mathematics
+  -English
+  -Science
+*Calculate student averages automatically.
+
+REPORTING
+-Display all students and their averages.
+-Display detailed student information.
+-Generate a gradebook summary.
+
+Program Structure
+Class: Student
+The Student class represents an individual student.
+
+Attributes
+Attribute	Description
+name	      Student's name
+grades	    Dictionary storing subjects and grades
+
+
+Methods
+init(name)
+Initializes the student's name and creates an empty dictionary for grades.
+
+Example:
+
+student = Student("Aniah")
+add_grade(subject, grade)
+Adds a grade for a given subject.
+
+Example:
+
+student.add_grade("MATHS", 92)
+calculate_average()
+Calculates and returns the student's average grade.
+
+Example:
+
+average = student.calculate_average()
+display_student()
+Displays the student's details, grades, and average.
+
+Example Output:
+
+STUDENT DETAILS
+----------------------------------------
+Name: Aniah
+MATHS: 92
+ENGLISH: 85
+SCIENCE: 88
+Average: 88.33
+Class: Gradebook
+The Gradebook class manages all student objects.
+
+Attributes
+Attribute	Description
+students	List containing Student objects
+
+Methods
+add_student(student)
+Adds a student object to the gradebook.
+
+Example:
+
+gradebook.add_student(student)
+remove_student(student_name)
+Removes a student from the gradebook.
+
+Example:
+
+gradebook.remove_student("Mpho")
+
+search_student(student_name)
+Searches for a student by name.
+
+Example:
+found_student = gradebook.search_student("Aniah")
+
+display_all_students()
+Displays all students and their average grades.
+
+Example Output:
+
+GRADEBOOK SUMMARY
+----------------------------------------
+Aniah - Average: 88.33
+Mpho - Average: 85.67
+Leornad - Average: 75.00
+Phenyo - Average: 81.67
+Weno - Average: 90.00
+Mandisa - Average: 78.67
+
+Sample Data
+The program was tested using the following student records:
+
+Student Name	Maths	 English	 Science
+Aniah	        92	    85	     88
+Mpho	        88	    79	     90
+Leornad	      75	    80	     70
+Phenyo	      83	    77	     85
+Weno	        90	    89	     91
+Mandisa	      78	    82	     76
+
+SAMPLE OUTPUT
+
+Gradebook Summary
+
+GRADEBOOK SUMMARY
+----------------------------------------
+Aniah - Average: 88.33
+Mpho - Average: 85.67
+Leornad - Average: 75.00
+Phenyo - Average: 81.67
+Weno - Average: 90.00
+Mandisa - Average: 78.67
+
+STUDENT SEARCH
+Input:
+
+Enter student name to search:
+Aniah
+Output:
+
+STUDENT DETAILS
+----------------------------------------
+Name: Aniah
+MATHS: 92
+ENGLISH: 85
+SCIENCE: 88
+Average: 88.33
+Object-Oriented Programming Concepts Used
+
+1. Classes
+The system uses two classes:
+Student
+Gradebook
+
+2. Objects
+
+Examples:
+student = Student("Aniah")
+gradebook = Gradebook()
+
+3. Encapsulation
+Data and methods are grouped within the Student and Gradebook classes.
+
+4. Constructors
+The __init__() method initializes object attributes when objects are created.
+
+5. Methods
+Examples include:
+
+add_grade()
+calculate_average()
+display_student()
+add_student()
+search_student()
+remove_student()
+
+How to Run the Program
+-Open a Python IDE such as:
+
+Visual Studio Code
+PyCharm
+IDLE
+-Copy the program code into a Python file.
+
+Save the file as:
+
+gradebook.py
+Run the program.
+
+Enter:
+
+-Number of students
+-Student names
+-Maths grades
+-English grades
+-Science grades
+
+View:
+
+-Student averages
+-Gradebook summary
+-Search results
+
+Technologies Used
+Python 3
+Object-Oriented Programming (OOP)
+Dictionaries
+Lists
+Loops
+Functions
+
+Author
+Aniah Erica Lucky Moeng
+
+Bachelor of Business Intelligence and Data Analytics (BAC)
+
+Python Student Gradebook Management System
